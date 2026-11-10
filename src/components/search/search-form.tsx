@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { LocationArrow24Regular, Search24Regular } from "@/components/icons";
+import { cn } from "@/lib/utils";
 
 type FieldProps = {
   id: string;
@@ -11,6 +12,7 @@ type FieldProps = {
   value: string;
   onChange: (value: string) => void;
   className?: string;
+  compact?: boolean;
 };
 
 function SearchField({
@@ -20,15 +22,21 @@ function SearchField({
   icon,
   value,
   onChange,
-  className = "",
+  className,
+  compact,
 }: FieldProps) {
   return (
-    <div className={`relative flex flex-1 items-center ${className}`}>
+    <div className={cn("relative flex flex-1 items-center", className)}>
       <label htmlFor={id} className="sr-only">
         {label}
       </label>
       {icon && (
-        <span className="pointer-events-none absolute left-5 text-ink/60">
+        <span
+          className={cn(
+            "pointer-events-none absolute text-ink/60",
+            compact ? "left-4" : "left-5",
+          )}
+        >
           {icon}
         </span>
       )}
@@ -38,15 +46,25 @@ function SearchField({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         autoComplete="off"
-        className={`h-full w-full bg-transparent text-base text-ink outline-none placeholder:text-ink/55 ${
-          icon ? "pl-14" : "pl-8"
-        } pr-4`}
+        className={cn(
+          "h-full w-full min-w-0 bg-transparent text-ink outline-none placeholder:text-ink/55",
+          compact ? "text-sm" : "text-base",
+          icon ? (compact ? "pl-11" : "pl-14") : compact ? "pl-5" : "pl-8",
+          "pr-4",
+        )}
       />
     </div>
   );
 }
 
-export function SearchForm() {
+type SearchFormProps = {
+  /** Version réduite, utilisée dans la barre sticky. */
+  compact?: boolean;
+  /** Préfixe des ids pour éviter les doublons quand le formulaire est affiché deux fois. */
+  idPrefix?: string;
+};
+
+export function SearchForm({ compact = false, idPrefix = "" }: SearchFormProps) {
   const [what, setWhat] = useState("");
   const [where, setWhere] = useState("");
 
@@ -60,33 +78,54 @@ export function SearchForm() {
     <form
       onSubmit={handleSubmit}
       role="search"
-      className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-[0_6px_20px_rgba(0,0,0,0.18)] md:h-16 md:flex-row md:overflow-visible md:rounded-full"
+      className={cn(
+        "relative flex bg-white",
+        compact
+          ? "h-11 flex-row rounded-full"
+          : "flex-col overflow-hidden rounded-3xl shadow-[0_6px_20px_rgba(0,0,0,0.18)] md:h-16 md:flex-row md:overflow-visible md:rounded-full",
+      )}
     >
       <SearchField
-        id="what"
+        id={`${idPrefix}what`}
         label="Quoi, qui ?"
-        placeholder="Plombier, coiffeur, taxi, restaurant"
+        placeholder={
+          compact ? "Plombier, coiffeur, taxi…" : "Plombier, coiffeur, taxi, restaurant"
+        }
         value={what}
         onChange={setWhat}
-        className="h-14 md:h-auto"
+        compact={compact}
+        className={compact ? undefined : "h-14 md:h-auto"}
       />
-      <div className="h-px bg-ink/40 md:h-auto md:w-px" aria-hidden />
+      <div
+        className={cn("bg-ink/40", compact ? "w-px" : "h-px md:h-auto md:w-px")}
+        aria-hidden
+      />
       <SearchField
-        id="where"
+        id={`${idPrefix}where`}
         label="Où ?"
-        placeholder="Adresse, quartier, ville (Lomé, Kara…)"
+        placeholder={
+          compact
+            ? "Ville, quartier…"
+            : "Adresse, quartier, ville (Lomé, Kara…)"
+        }
         icon={<LocationArrow24Regular className="size-5" />}
         value={where}
         onChange={setWhere}
-        className="h-14 md:h-auto md:pr-12"
+        compact={compact}
+        className={compact ? "pr-9" : "h-14 md:h-auto md:pr-12"}
       />
       <button
         type="submit"
         aria-label="Rechercher"
-        className="flex h-14 items-center justify-center gap-2 bg-primary font-semibold text-white md:absolute md:-right-1 md:top-0 md:size-16 md:rounded-full md:border-2 md:border-white md:shadow-md"
+        className={cn(
+          "flex items-center justify-center gap-2 bg-primary font-semibold text-white",
+          compact
+            ? "absolute -right-0.5 top-0 size-11 rounded-full border-2 border-white shadow-md"
+            : "h-14 md:absolute md:-right-1 md:top-0 md:size-16 md:rounded-full md:border-2 md:border-white md:shadow-md",
+        )}
       >
         <Search24Regular />
-        <span className="md:hidden">Rechercher</span>
+        {!compact && <span className="md:hidden">Rechercher</span>}
       </button>
     </form>
   );

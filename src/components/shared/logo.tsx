@@ -2,7 +2,12 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 
-type LogoProps = { className?: string; inverted?: boolean };
+type LogoProps = {
+  className?: string;
+  inverted?: boolean;
+  /** Masque le texte sous le breakpoint lg (barre compacte). */
+  compact?: boolean;
+};
 
 /** Pictogramme « sourire » : un point et un arc. */
 function LogoMark({ className }: { className?: string }) {
@@ -22,7 +27,7 @@ function LogoMark({ className }: { className?: string }) {
   );
 }
 
-export function Logo({ className, inverted }: LogoProps) {
+export function Logo({ className, inverted, compact }: LogoProps) {
   return (
     <Link
       href="/"
@@ -34,7 +39,14 @@ export function Logo({ className, inverted }: LogoProps) {
       )}
     >
       <LogoMark className="h-7 w-8" />
-      <span className="text-lg font-bold tracking-tight">pagesvertes</span>
+      <span
+        className={cn(
+          "text-lg font-bold tracking-tight",
+          compact && "hidden lg:inline",
+        )}
+      >
+        pagesvertes
+      </span>
     </Link>
   );
 }

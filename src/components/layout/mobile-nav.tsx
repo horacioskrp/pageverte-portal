@@ -5,11 +5,17 @@ import Link from "next/link";
 import { Dismiss24Regular, Navigation24Regular } from "@/components/icons";
 import type { NavItem } from "@/config/site";
 
-export function MobileNav({ items }: { items: NavItem[] }) {
+export function MobileNav({
+  items,
+  alwaysVisible = false,
+}: {
+  items: NavItem[];
+  alwaysVisible?: boolean;
+}) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="lg:hidden">
+    <div className={alwaysVisible ? undefined : "lg:hidden"}>
       <button
         type="button"
         aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
@@ -20,7 +26,7 @@ export function MobileNav({ items }: { items: NavItem[] }) {
         {open ? <Dismiss24Regular /> : <Navigation24Regular />}
       </button>
       {open && (
-        <nav className="absolute inset-x-0 top-20 border-t border-ink/10 bg-white px-4 py-4 shadow-lg">
+        <nav className="absolute inset-x-0 top-full border-t border-ink/10 bg-white px-4 py-4 shadow-lg">
           <ul className="space-y-1">
             {items.map((item) => (
               <li key={item.label}>

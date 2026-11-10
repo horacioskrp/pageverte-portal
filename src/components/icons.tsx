@@ -5,6 +5,7 @@
 export {
   ArrowRight24Regular,
   Building24Regular,
+  Calendar24Regular,
   ChartMultiple24Regular,
   Checkmark24Regular,
   Cut24Regular,

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="Plat togolais">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4a261"/>
+      <stop offset="1" stop-color="#e76f51"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <ellipse cx="300" cy="340" rx="230" ry="28" fill="#000" fill-opacity=".15"/>
+  <path d="M110 220 H490 A190 150 0 0 1 110 220Z" fill="#7a3b12"/>
+  <ellipse cx="300" cy="220" rx="190" ry="40" fill="#b5541a"/>
+  <ellipse cx="300" cy="216" rx="168" ry="30" fill="#8c2f0b"/>
+  <circle cx="300" cy="200" r="52" fill="#fffaf0"/>
+  <circle cx="285" cy="186" r="14" fill="#fff" fill-opacity=".8"/>
+  <g fill="#ffd166"><ellipse cx="205" cy="215" rx="20" ry="9" transform="rotate(-15 205 215)"/><ellipse cx="395" cy="215" rx="20" ry="9" transform="rotate(15 395 215)"/></g>
+  <g fill="#43a842"><circle cx="240" cy="228" r="5"/><circle cx="262" cy="233" r="5"/><circle cx="342" cy="233" r="5"/><circle cx="362" cy="226" r="5"/></g>
+  <g stroke="#fff" stroke-opacity=".7" stroke-width="8" fill="none" stroke-linecap="round">
+    <path d="M250 150 q-20 -28 0 -52 q16 -22 -2 -44"/>
+    <path d="M300 140 q-20 -30 0 -58 q18 -26 0 -50"/>
+    <path d="M350 150 q-20 -28 0 -52 q16 -22 -2 -44"/>
+  </g>
+  <rect x="90" y="262" width="420" height="14" rx="7" fill="#7a3b12"/>
+</svg>

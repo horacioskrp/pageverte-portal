@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="Marché nocturne">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="60%" r="60%">
+      <stop offset="0" stop-color="#ffb347" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#ffb347" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="400" fill="#10152b"/>
+  <rect width="600" height="400" fill="url(#glow)"/>
+  <path d="M0 60 Q150 130 300 70 T600 60" fill="none" stroke="#333a5c" stroke-width="3"/>
+  <g fill="#ffd166">
+    <circle cx="40" cy="88" r="7"/><circle cx="110" cy="108" r="7"/><circle cx="180" cy="108" r="7"/>
+    <circle cx="250" cy="92" r="7"/><circle cx="320" cy="80" r="7"/><circle cx="390" cy="88" r="7"/>
+    <circle cx="460" cy="86" r="7"/><circle cx="530" cy="72" r="7"/>
+  </g>
+  <path d="M60 170 H540 L510 120 H90 Z" fill="#0b6e2e"/>
+  <path d="M90 120 H150 L140 170 H60 Z M210 120 H270 L270 170 H200 Z M330 120 H390 L400 170 H330 Z M450 120 H510 L540 170 H460 Z" fill="#f9c80e"/>
+  <rect x="80" y="170" width="8" height="170" fill="#4b3621"/>
+  <rect x="512" y="170" width="8" height="170" fill="#4b3621"/>
+  <rect x="60" y="290" width="480" height="24" fill="#6b3f1d"/>
+  <rect x="80" y="314" width="440" height="60" fill="#4b3621"/>
+  <ellipse cx="170" cy="278" rx="48" ry="14" fill="#2b2b2b"/>
+  <rect x="122" y="240" width="96" height="40" rx="8" fill="#3a3a3a"/>
+  <path d="M150 232 q-8 -20 4 -34 M175 232 q-8 -20 4 -34 M198 232 q-8 -20 4 -34" stroke="#ffffff" stroke-opacity=".5" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <g fill="#c1440e">
+    <rect x="300" y="262" width="150" height="10" rx="5"/>
+    <rect x="300" y="276" width="150" height="10" rx="5" fill="#a8320a"/>
+  </g>
+  <g stroke="#e9c46a" stroke-width="3"><path d="M310 262 v-16 M340 262 v-20 M370 262 v-16 M400 262 v-20 M430 262 v-16"/></g>
+  <circle cx="300" cy="340" r="40" fill="#ffd166" fill-opacity=".08"/>
+</svg>

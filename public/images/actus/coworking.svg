@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="Espace de coworking">
+  <rect width="600" height="400" fill="#dff3e2"/>
+  <rect x="40" y="40" width="200" height="150" rx="8" fill="#bfe4f5"/>
+  <path d="M140 40 V190 M40 115 H240" stroke="#fff" stroke-width="8"/>
+  <path d="M40 190 L100 130 L150 170 L190 120 L240 190Z" fill="#43a842" fill-opacity=".5"/>
+  <rect x="0" y="300" width="600" height="100" fill="#c9a77c"/>
+  <rect x="70" y="250" width="460" height="22" rx="6" fill="#7a4a24"/>
+  <rect x="100" y="272" width="12" height="90" fill="#5c3a1a"/><rect x="488" y="272" width="12" height="90" fill="#5c3a1a"/>
+  <g>
+    <path d="M140 250 L165 180 H265 L290 250Z" fill="#2b2f3a"/>
+    <rect x="172" y="188" width="86" height="54" fill="#8fd3a0"/>
+    <rect x="125" y="248" width="180" height="8" rx="4" fill="#bbb"/>
+  </g>
+  <g>
+    <path d="M340 250 L365 190 H455 L480 250Z" fill="#2b2f3a"/>
+    <rect x="372" y="197" width="76" height="45" fill="#ffe29a"/>
+    <rect x="325" y="248" width="170" height="8" rx="4" fill="#bbb"/>
+  </g>
+  <circle cx="215" cy="150" r="20" fill="#6b3f1d"/><rect x="195" y="170" width="40" height="10" fill="#d62828"/>
+  <circle cx="545" cy="262" r="0" fill="none"/>
+  <path d="M540 300 q-30 -40 0 -80 q30 40 0 80Z" fill="#2e8b3d"/>
+  <path d="M540 300 q-50 -20 -40 -60 q40 10 40 60Z" fill="#43a842"/>
+  <rect x="520" y="300" width="40" height="40" rx="6" fill="#a0522d"/>
+</svg>

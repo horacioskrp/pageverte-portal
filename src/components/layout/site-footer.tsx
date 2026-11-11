@@ -1,57 +1,93 @@
 import Link from "next/link";
+import { Link24Regular, Phone24Regular } from "@/components/icons";
 import { Container } from "@/components/shared/container";
 import { Logo } from "@/components/shared/logo";
-import { footerColumns, legalLinks, siteConfig } from "@/config/site";
+import {
+  helpGroup,
+  legalGroup,
+  otherServicesGroup,
+  socialGroup,
+  type FooterGroup,
+} from "@/config/footer";
+
+function FooterGroupBlock({
+  group,
+  withIcons = false,
+}: {
+  group: FooterGroup;
+  withIcons?: boolean;
+}) {
+  return (
+    <div>
+      <h3 className="text-xs font-bold uppercase tracking-wide text-ink">
+        {group.title}
+      </h3>
+      <span aria-hidden className="mt-3 block h-px w-12 bg-ink/40" />
+      <ul className="mt-5 space-y-1.5 text-sm text-ink/75">
+        {group.links.map((link) => (
+          <li key={link.label}>
+            <Link
+              href={link.href}
+              className="inline-flex items-center gap-2 hover:text-ink hover:underline"
+            >
+              {withIcons && <Link24Regular className="size-3.5" />}
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function StoreBadge({ label, name }: { label: string; name: string }) {
+  return (
+    <Link
+      href="#"
+      className="inline-flex h-11 items-center gap-2 rounded-lg bg-black px-3 text-white transition-opacity hover:opacity-85"
+    >
+      <Phone24Regular className="size-5" />
+      <span className="leading-none">
+        <span className="block text-[9px] uppercase">{label}</span>
+        <span className="block text-sm font-semibold">{name}</span>
+      </span>
+    </Link>
+  );
+}
 
 export function SiteFooter() {
   return (
-    <footer className="bg-brand-900 text-white/80">
-      <Container className="py-14">
-        <div className="grid gap-10 md:grid-cols-5">
-          <div className="space-y-4 md:col-span-1">
-            <Logo inverted />
-            <p className="text-sm text-white/60">{siteConfig.tagline}.</p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-8 md:col-span-4 md:grid-cols-4">
-            {footerColumns.map((col) => (
-              <div key={col.title}>
-                <h3 className="mb-4 text-sm font-semibold text-white">
-                  {col.title}
-                </h3>
-                <ul className="space-y-2.5 text-sm">
-                  {col.links.map((link) => (
-                    <li key={link.label}>
-                      <Link
-                        href={link.href}
-                        className="transition-colors hover:text-white"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+    <footer>
+      <div className="bg-neutral-100 py-14">
+        <Container>
+          <div className="grid gap-10 md:grid-cols-3">
+            <div className="space-y-10">
+              <FooterGroupBlock group={helpGroup} />
+              <FooterGroupBlock group={legalGroup} />
+            </div>
+            <FooterGroupBlock group={otherServicesGroup} />
+            <div className="flex flex-col justify-between gap-10">
+              <FooterGroupBlock group={socialGroup} withIcons />
+              <div className="flex flex-wrap gap-3">
+                <StoreBadge label="Télécharger dans" name="l'App Store" />
+                <StoreBadge label="Disponible sur" name="Google Play" />
               </div>
-            ))}
+            </div>
           </div>
-        </div>
+        </Container>
+      </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/60 md:flex-row md:items-center md:justify-between">
-          <p>
-            © 2026 {siteConfig.name}. Tous droits
-            réservés.
-          </p>
-          <ul className="flex flex-wrap gap-x-5 gap-y-2">
-            {legalLinks.map((link) => (
-              <li key={link.label}>
-                <Link href={link.href} className="hover:text-white">
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </Container>
+      <div className="bg-white py-5">
+        <Container className="flex flex-wrap items-center justify-between gap-3 text-xs text-ink/70">
+          <div className="flex flex-wrap items-center gap-3">
+            <Logo className="text-ink [&_svg]:h-5 [&_svg]:w-6 [&_span]:text-sm" />
+            <span>est l&apos;annuaire local du Togo · © 2026</span>
+          </div>
+          <Link href="#" className="hover:text-ink hover:underline">
+            Recrutement
+          </Link>
+        </Container>
+      </div>
     </footer>
   );
 }

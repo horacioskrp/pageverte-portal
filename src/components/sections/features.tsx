@@ -1,44 +1,35 @@
-import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
 import { Container } from "@/components/shared/container";
-import { SectionHeading } from "@/components/shared/section-heading";
-import { features, stats } from "@/config/site";
+import { FeatureCard } from "@/components/shared/feature-card";
+import { features } from "@/config/site";
 
 export function Features() {
   return (
-    <section id="avantages" className="bg-brand-50 py-16 sm:py-20">
+    <section id="avantages" className="pb-16 sm:pb-20">
       <Container>
-        <SectionHeading
-          align="center"
-          title="Pourquoi choisir PagesVertes au Togo ?"
-          description="Un annuaire pensé pour vous faire gagner du temps et choisir en confiance."
-        />
+        <h2 className="text-center text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
+          Avec PagesVertes, rencontrez le pro qu&apos;il vous faut !
+        </h2>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {features.map(({ title, description, icon: Icon }) => (
-            <Card key={title} className="border-0 shadow-sm">
-              <CardContent className="space-y-4 p-6">
-                <span className="flex size-12 items-center justify-center rounded-xl bg-primary text-white">
-                  <Icon className="size-6" />
-                </span>
-                <h3 className="text-lg font-bold text-brand-900">{title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {description}
-                </p>
-              </CardContent>
-            </Card>
+        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {features.map((feature) => (
+            <li key={feature.title}>
+              <FeatureCard feature={feature} />
+            </li>
           ))}
+        </ul>
+
+        <div className="mt-10 text-center">
+          <p className="text-xl font-extrabold tracking-tight text-ink sm:text-2xl">
+            Comme vous, 1 Togolais sur 3 utilise PagesVertes chaque mois.
+          </p>
+          <Link
+            href="#actus"
+            className="mt-5 inline-flex h-10 items-center rounded-full border border-brand-700/50 bg-[#ffe000] px-5 text-sm font-semibold text-brand-700 transition-opacity hover:opacity-90"
+          >
+            Consulter notre actualité
+          </Link>
         </div>
-
-        <dl className="mt-14 grid gap-8 text-center sm:grid-cols-3">
-          {stats.map(({ value, label }) => (
-            <div key={label}>
-              <dt className="text-4xl font-extrabold text-brand-700">
-                {value}
-              </dt>
-              <dd className="mt-1 text-sm text-muted-foreground">{label}</dd>
-            </div>
-          ))}
-        </dl>
       </Container>
     </section>
   );

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" fill="none" stroke="#0c1f10" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Téléphone avec mégaphone">
+  <rect x="72" y="14" width="64" height="118" rx="12" fill="#fff"/>
+  <path d="M96 22 H112" stroke-width="2.5"/>
+  <path d="M110 118 h20 v12" stroke-width="0"/>
+  <rect x="108" y="100" width="18" height="18" rx="4" fill="#43a842"/>
+  <path d="M76 70 L104 54 V84 Z" fill="#fff"/>
+  <path d="M104 50 L130 38 V100 L104 88Z" fill="#fff"/>
+  <path d="M88 60 L100 54 V86 L88 80Z" fill="#ff5e78"/>
+  <path d="M84 84 L88 100 H98 L96 86" fill="#fff"/>
+  <path d="M142 44 L152 38 M144 62 H156 M142 80 L152 86 M60 28 L66 38 M52 46 L62 50" stroke-width="2.5"/>
+</svg>

@@ -4,8 +4,8 @@ import { Features } from "@/components/sections/features";
 import { Hero } from "@/components/sections/hero";
 import { LocalNews } from "@/components/sections/local-news";
 import { PopularCategories } from "@/components/sections/popular-categories";
-import { PopularCities } from "@/components/sections/popular-cities";
-import { ProCta } from "@/components/sections/pro-cta";
+import { ExplorePlaces } from "@/components/sections/explore-places";
+import { ProServices } from "@/components/sections/pro-services";
 
 export default function HomePage() {
   return (
@@ -16,8 +16,8 @@ export default function HomePage() {
         <PopularCategories />
         <LocalNews />
         <Features />
-        <ProCta />
-        <PopularCities />
+        <ExplorePlaces />
+        <ProServices />
       </main>
       <SiteFooter />
     </>

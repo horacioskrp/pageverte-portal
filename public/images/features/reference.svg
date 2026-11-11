@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" fill="none" stroke="#0c1f10" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Loupe et repère de localisation">
+  <path d="M118 22 C96 22 84 38 84 54 C84 76 118 112 118 112 C118 112 152 76 152 54 C152 38 140 22 118 22Z" fill="#43a842"/>
+  <path d="M152 54 C152 76 118 112 118 112 C118 112 132 70 152 54Z" fill="#14361a" stroke="none" opacity=".25"/>
+  <circle cx="118" cy="54" r="14" fill="#fff"/>
+  <circle cx="86" cy="86" r="34" fill="#fff" fill-opacity=".85"/>
+  <circle cx="86" cy="86" r="26"/>
+  <path d="M71 74 C76 66 86 63 94 66" stroke-width="2.5"/>
+  <path d="M62 110 L30 134" stroke-width="7"/>
+  <path d="M62 110 L30 134" stroke="#fff" stroke-width="2.5"/>
+  <path d="M104 6 L106 16 M150 10 L142 18 M162 30 L152 34" stroke-width="2.5"/>
+</svg>

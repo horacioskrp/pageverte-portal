@@ -16,6 +16,8 @@ export {
   History24Regular,
   Home24Regular,
   LocationArrow24Regular,
+  Link24Regular,
+  Phone24Regular,
   Location24Regular,
   PersonCircle24Regular,
   Navigation24Regular,

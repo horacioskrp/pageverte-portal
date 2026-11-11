@@ -12,13 +12,13 @@ export function Hero() {
 
         <div className="mt-8 mx-auto max-w-4xl">
           <SearchForm />
-          <p className="mt-5 flex flex-wrap items-center justify-center gap-2 text-sm">
-            <span className="font-medium">Recherches fréquentes :</span>
+          <p className="mt-5 flex flex-nowrap items-center justify-center gap-1.5 text-xs sm:flex-wrap sm:gap-2 sm:text-sm">
+            <span className="hidden font-medium sm:inline">Recherches fréquentes :</span>
             {quickSearches.map((term) => (
               <a
                 key={term}
                 href="#"
-                className="rounded-full border border-white/60 px-3 py-1 font-medium transition-colors hover:bg-white hover:text-brand-700"
+                className="whitespace-nowrap rounded-full border border-white/60 px-2.5 py-1 font-medium sm:px-3 transition-colors hover:bg-white hover:text-brand-700"
               >
                 {term}
               </a>

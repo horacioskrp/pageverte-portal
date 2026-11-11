@@ -94,10 +94,10 @@ export function SearchForm({ compact = false, idPrefix = "" }: SearchFormProps) 
         value={what}
         onChange={setWhat}
         compact={compact}
-        className={compact ? undefined : "h-14 md:h-auto"}
+        className={compact ? undefined : "h-14 flex-none md:h-auto md:flex-1"}
       />
       <div
-        className={cn("bg-ink/40", compact ? "w-px" : "h-px md:h-auto md:w-px")}
+        className={cn("bg-ink/40", compact ? "w-px" : "mx-4 h-px shrink-0 md:mx-0 md:h-auto md:w-px")}
         aria-hidden
       />
       <SearchField
@@ -112,7 +112,7 @@ export function SearchForm({ compact = false, idPrefix = "" }: SearchFormProps) 
         value={where}
         onChange={setWhere}
         compact={compact}
-        className={compact ? "pr-9" : "h-14 md:h-auto md:pr-12"}
+        className={compact ? "pr-9" : "h-14 flex-none md:h-auto md:flex-1 md:pr-12"}
       />
       <button
         type="submit"
@@ -121,7 +121,7 @@ export function SearchForm({ compact = false, idPrefix = "" }: SearchFormProps) 
           "flex items-center justify-center gap-2 bg-primary font-semibold text-white",
           compact
             ? "absolute -right-0.5 top-0 size-11 rounded-full border-2 border-white shadow-md"
-            : "h-14 md:absolute md:-right-1 md:top-0 md:size-16 md:rounded-full md:border-2 md:border-white md:shadow-md",
+            : "mx-2 mb-2 mt-1 h-11 rounded-full text-sm md:absolute md:-right-1 md:top-0 md:m-0 md:size-16 md:border-2 md:border-white md:shadow-md",
         )}
       >
         <Search24Regular />
